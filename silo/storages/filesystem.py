@@ -35,7 +35,12 @@ def _ensure_file_exists(method):
 
 class FileSystemStorage(Storage):
     """
-    A storage for the local filesystem.
+    A wrapper for file storage and handling on a local filesystem.
+
+    You can also additionally provide an optional base URL if you want to
+    use it from that URL. For example if base_url is
+    ``http://www.media.example.com/`` and file name ``hello.txt`` is accessed,
+    then file URL is used as ``http://www.media.example.com/hello.txt``
 
     Example::
 
